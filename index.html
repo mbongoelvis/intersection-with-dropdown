@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DropDown Navigation</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- css loaders -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css"
+    />
+    <style>
+      * {
+        font-family: Epilogue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- navigations -->
+      <nav class="mt-4 flex justify-between items-center px-3 md:px-[1rem] lg:px-[4rem] w-full">
+        <!-- logo and menu-->
+        <div class="flex md:gap-[2rem] gap-[5rem]">
+          <img src="./images/logo.svg" alt="" class="cursor-pointer" />
+          <div>
+            <div class="hidden md:flex list-none flex-col md:flex-row gap-12">
+              <!-- first collaps -->
+              <div class="cursor-pointer group">
+                <li class="flex items-center gap-3 hover:font-semibold">
+                  Features
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="arrow down"
+                    class="arrowup group-hover:rotate-180"
+                  />
+                </li>
+                <div
+                  class="flex flex-col gap-3 mt-3 pl-5 opacity-0 rounded-xl absolute bg-white shadow-xl px-12 py-10 group-hover:opacity-100"  
+                >
+                  <li class="flex items-center gap-3">
+                    <img src="./images/icon-todo.svg" alt="todo" />Todo List
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <img
+                      src="./images/icon-calendar.svg"
+                      alt="calender"
+                    />Calender
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <img
+                      src="./images/icon-reminders.svg"
+                      alt="Reminders"
+                    />Reminders
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <img
+                      src="./images/icon-planning.svg"
+                      alt="planing"
+                    />Planing
+                  </li>
+                </div>
+              </div>
+              <!-- second collaps -->
+              <div class="cursor-pointer group">
+                <li class="flex items-center gap-3 hover:font-semibold">
+                  Company
+                  <img
+                    src="./images/icon-arrow-down.svg"
+                    alt="arrow down"
+                    class="arrowup group-hover:rotate-180"
+                  />
+                </li>
+                <div
+                  class="flex flex-col gap-3 mt-3 pl-5 lg:absolute opacity-0 group-hover:opacity-100 bg-white shadow-xl px-12 py-5 rounded-xl"
+                >
+                  <li class="hover:font-bold">History</li>
+                  <li class="hover:font-bold">Our Team</li>
+                  <li class="hover:font-bold">Blog</li>
+                </div>
+              </div>
+              <li class="cursor-pointer hover:font-semibold">Careers</li>
+              <li class="cursor-pointer hover:font-semibold">About</li>
+            </div>
+          </div>
+        </div>
+        <!-- mobile manu -->
+        <div>
+          <!-- harm menu -->
+          <span
+            class="material-symbols-outlined text-4xl cursor-pointer md:hidden"
+            onclick="openMenu()"
+          >
+            menu
+          </span>
+          <!-- harm menu collaps -->
+          <div
+            class="absolute w-full h-screen bg-black bg-opacity-30 left-0 top-0 menu hidden"
+          >
+            <div
+              class="w-[65%] bg-white h-full ml-auto px-5 pt-3 ld ld-grow-rtl-in"
+            >
+              <!-- close menu icon -->
+              <img
+                src="./images/icon-close-menu.svg"
+                class="ml-auto cursor-pointer"
+                alt="close menu icon"
+                onclick="closeMenu()"
+              />
+              <!-- mobile links -->
+              <div class="list-none flex flex-col gap-5">
+                <!-- first collaps -->
+                <div class="cursor-pointer main-parent">
+                  <li class="flex items-center gap-3">
+                    Features
+                    <img
+                      src="./images/icon-arrow-down.svg"
+                      alt="arrow down"
+                      class="arrowup"
+                    />
+                  </li>
+                  <div
+                    class="flex flex-col gap-3 mt-3 pl-5 ld ld-grow-ttb-in hidden collaps"
+                  >
+                    <li class="flex items-center gap-3">
+                      <img src="./images/icon-todo.svg" alt="todo" />Todo List
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <img
+                        src="./images/icon-calendar.svg"
+                        alt="calender"
+                      />Calender
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <img
+                        src="./images/icon-reminders.svg"
+                        alt="Reminders"
+                      />Reminders
+                    </li>
+                    <li class="flex items-center gap-3">
+                      <img
+                        src="./images/icon-planning.svg"
+                        alt="planing"
+                      />Planing
+                    </li>
+                  </div>
+                </div>
+                <!-- second collaps -->
+                <div class="cursor-pointer main-parent">
+                  <li class="flex items-center gap-3">
+                    Company
+                    <img
+                      src="./images/icon-arrow-down.svg"
+                      alt="arrow down"
+                      class="arrowup"
+                    />
+                  </li>
+                  <div
+                    class="flex flex-col gap-3 mt-3 pl-5 ld ld-grow-ttb-in hidden collaps"
+                  >
+                    <li>History</li>
+                    <li>Our Team</li>
+                    <li>Blog</li>
+                  </div>
+                </div>
+                <li class="cursor-pointer">Careers</li>
+                <li class="cursor-pointer">About</li>
+              </div>
+              <!-- buttons -->
+              <div class="mt-10 flex flex-col items-center gap-3 w-full">
+                <a href="#" class="cursor-pointer text-gray-600">Login</a>
+                <a
+                  href="#"
+                  class="px-[5rem] rounded-2xl text-gray-600 border-2 py-2 border-black"
+                  >Register</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+         <div class=" hidden md:flex items-center gap-6">
+                    <a href="#" class="cursor-pointer text-gray-600">Login</a>
+                    <a href="#" class="px-[3rem] md:px-8 rounded-2xl text-gray-600 border-2 py-2 border-black hover:text-white hover:bg-black">Register</a>
+        </div>
+       
+      </nav>
+
+
+      <!-- hero section -->
+      <section class="w-full min-h-12 mt-4 flex flex-col lg:flex-row lg:flex-row-reverse gap-4 md:px-[3rem] lg:h-[40rem] xl:h-[48rem] lg:px-[4rem] xl:gap-[6rem] xl:px-[14rem]">
+        <!-- hero image section -->
+        <div
+          class="bg-[url('./images/image-hero-mobile.png')] lg:bg-[url('./images/image-hero-desktop.png')] bg-cover bg-center bg-no-repeat lg:max-w-[44%] w-full min-h-[20rem] xl:h-full"
+        ></div>
+        <!-- hero text section -->
+        <div class="mt-8 w-full lg:w-[70%] lg:flex flex-col justify-center items-start">
+          <h1 class="text-4xl text-center font-bold lg:text-start lg:text-8xl xl;w-full">Make remote work</h1>
+          <p class="text-center mt-4 text-gray-500 md:w-[40rem] lg:w-[25rem] lg:text-start">
+            Get your team in sync, no matter your location, streaming processes,
+            create team rituals, and watch productivity soar.
+          </p>
+          <div class="w-full flex justify-center mt-6 lg:justify-start">
+            <button
+              class="rounded-2xl w-[9rem] bg-black text-white font-bold h-12 xl:w-[10rem]"
+            >
+              Learn more
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- partners -->
+      <section class="w-full flex justify-between items-center mt-12 px-3 xl:absolute top-[45rem] xl:w-[38rem] left-[13rem]">
+        <img src="./images/client-databiz.svg" alt="databiz" />
+        <img src="./images/client-audiophile.svg" alt="audio-phile" />
+        <img src="./images/client-meet.svg" alt="meet" />
+        <img src="./images/client-maker.svg" alt="maker" />
+      </section>
+    </div>
+
+    <!-- script linking -->
+    <script src="script.js"></script>
+  </body>
+</html>
